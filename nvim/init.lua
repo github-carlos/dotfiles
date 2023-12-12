@@ -37,12 +37,20 @@ I hope you enjoy your Neovim journey,
 
 P.S. You can delete this when you're done too. It's your config now :)
 --]]
-require("personal")
 vim.wo.number = true
 vim.wo.relativenumber = true
 
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "n", "nzzV")
+
 -- My bindings
 vim.keymap.set('n', '<C-b>', '<Cmd>Neotree toggle<CR>')
+vim.keymap.set({"n", "v", "i" }, "<C-c>", "<Esc>", { noremap = true, silent = true })
+-- because of tmux
+vim.opt.timeoutlen = 1000
+vim.opt.ttimeoutlen = 0
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
@@ -634,3 +642,4 @@ cmp.setup {
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+require("personal")

@@ -30,7 +30,7 @@ root: /home/ask-028/Documentos/asksuite-nlp-classifier
 # pre_window: rbenv shell 2.0.0-p247
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
-# tmux_options: -f ~/.tmux.mac.conf
+tmux_options: -f ~/.config/tmux/.tmux.conf
 
 # Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
 # tmux_command: byobu
@@ -45,11 +45,12 @@ root: /home/ask-028/Documentos/asksuite-nlp-classifier
 # attach: false
 
 windows:
-  - editor:
+  - code:
       layout: main-vertical
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
         - nvim src/modules/classifier/classifier.module.ts  
+        - clear && cowsay Welcome to $(basename $(pwd))'!!'
   - server:
