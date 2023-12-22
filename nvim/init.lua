@@ -35,14 +35,18 @@ are first encountering a few different constructs in your nvim config.
 I hope you enjoy your Neovim journey,
 - TJ
 
+-- background
+
+
 P.S. You can delete this when you're done too. It's your config now :)
 --]]
 vim.wo.number = true
 vim.wo.relativenumber = true
+vim.wo.scrolloff = 7
 
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzV")
+vim.api.nvim_set_keymap('n', '<C-U>', '<C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-D>', '<C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>', { noremap = true, silent = true })
+
 
 -- My bindings
 vim.keymap.set('n', '<C-b>', '<Cmd>Neotree toggle<CR>')
