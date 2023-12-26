@@ -44,13 +44,15 @@ vim.wo.number = true
 vim.wo.relativenumber = true
 vim.wo.scrolloff = 7
 
-vim.api.nvim_set_keymap('n', '<C-U>', '<C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-D>', '<C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>', { noremap = true, silent = true })
-
-
 -- My bindings
 vim.keymap.set('n', '<C-b>', '<Cmd>Neotree toggle<CR>')
 vim.keymap.set({"n", "v", "i" }, "<C-c>", "<Esc>", { noremap = true, silent = true })
+vim.keymap.set('n', '<C-q>', '<C-u>zz', { noremap = true, silent = true})
+vim.keymap.set('n', '<C-d>', '<C-d>zz', { noremap = true, silent = true})
+
+vim.api.nvim_set_keymap('n', 'N', [[:lua vim.cmd("call search('\\V' . escape(@/, '\\'), 'W')")<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'N', 'zzv', { noremap = true })
+
 -- because of tmux
 vim.opt.timeoutlen = 1000
 vim.opt.ttimeoutlen = 0
@@ -193,24 +195,14 @@ require('lazy').setup({
       end,
     },
   },
-
-  {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'onedark'
-    end,
-  },
-
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`
     opts = {
       options = {
-        icons_enabled = false,
-        theme = 'onedark',
+        icons_enabled = true,
+        theme = 'dracula',
         component_separators = '|',
         section_separators = '',
       },
