@@ -46,11 +46,12 @@ vim.wo.scrolloff = 7
 
 -- My bindings
 vim.keymap.set('n', '<C-b>', '<Cmd>Neotree toggle<CR>')
-vim.keymap.set({"n", "v", "i" }, "<C-c>", "<Esc>", { noremap = true, silent = true })
-vim.keymap.set('n', '<C-q>', '<C-u>zz', { noremap = true, silent = true})
-vim.keymap.set('n', '<C-d>', '<C-d>zz', { noremap = true, silent = true})
+vim.keymap.set({ 'n', 'v', 'i' }, '<C-c>', '<Esc>', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-q>', '<C-u>zz', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-d>', '<C-d>zz', { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap('n', 'N', [[:lua vim.cmd("call search('\\V' . escape(@/, '\\'), 'W')")<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'N', [[:lua vim.cmd("call search('\\V' . escape(@/, '\\'), 'W')")<CR>]],
+  { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'N', 'zzv', { noremap = true })
 
 -- because of tmux
@@ -111,8 +112,6 @@ vim.opt.rtp:prepend(lazypath)
 --  You can also configure plugins after the setup call,
 --    as they will be available in your neovim runtime.
 require('lazy').setup({
-  -- NOTE: First, some plugins that don't require any configuration
-
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
@@ -250,7 +249,6 @@ require('lazy').setup({
     },
     build = ':TSUpdate',
   },
-
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
@@ -264,6 +262,7 @@ require('lazy').setup({
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
   { import = 'custom.plugins' },
+  { import = 'lazyvim.plugins.extras.test.core' }
 }, {})
 
 -- [[ Setting options ]]
@@ -358,17 +357,17 @@ local function find_git_root()
   local current_dir
   local cwd = vim.fn.getcwd()
   -- If the buffer is not associated with a file, return nil
-  if current_file == "" then
+  if current_file == '' then
     current_dir = cwd
   else
     -- Extract the directory from the current file's path
-    current_dir = vim.fn.fnamemodify(current_file, ":h")
+    current_dir = vim.fn.fnamemodify(current_file, ':h')
   end
 
   -- Find the Git root directory from the current file's path
-  local git_root = vim.fn.systemlist("git -C " .. vim.fn.escape(current_dir, " ") .. " rev-parse --show-toplevel")[1]
+  local git_root = vim.fn.systemlist('git -C ' .. vim.fn.escape(current_dir, ' ') .. ' rev-parse --show-toplevel')[1]
   if vim.v.shell_error ~= 0 then
-    print("Not a git repository. Searching on current working directory")
+    print 'Not a git repository. Searching on current working directory'
     return cwd
   end
   return git_root
@@ -378,9 +377,9 @@ end
 local function live_grep_git_root()
   local git_root = find_git_root()
   if git_root then
-    require('telescope.builtin').live_grep({
+    require('telescope.builtin').live_grep {
       search_dirs = { git_root },
-    })
+    }
   end
 end
 
@@ -599,7 +598,7 @@ cmp.setup {
     end,
   },
   completion = {
-    completeopt = 'menu,menuone,noinsert'
+    completeopt = 'menu,menuone,noinsert',
   },
   mapping = cmp.mapping.preset.insert {
     ['<C-n>'] = cmp.mapping.select_next_item(),
@@ -638,4 +637,4 @@ cmp.setup {
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
-require("personal")
+require 'personal'
