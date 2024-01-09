@@ -1,9 +1,2 @@
--- Enable auto-indentation and auto-format on save
---vim.cmd([[
---  autocmd BufWritePre * :normal! gg=G
---]])
---
----- Optionally, run :Format command if it is available
---vim.cmd([[
---  autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx :Format
---]])
+require("personal.vim-configs")
+require("personal.remap")
