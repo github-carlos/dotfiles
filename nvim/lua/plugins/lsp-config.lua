@@ -14,25 +14,25 @@ return {
     },
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "tsserver" }
+        ensure_installed = { "lua_ls", "tsserver" },
       })
-    end
+    end,
   },
   {
     "neovim/nvim-lspconfig",
     lazy = false,
     config = function()
---      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      --      local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
       local lspconfig = require("lspconfig")
       lspconfig.tsserver.setup({
-        capabilities = capabilities
+        capabilities = capabilities,
       })
       lspconfig.html.setup({
-        capabilities = capabilities
+        capabilities = capabilities,
       })
       lspconfig.lua_ls.setup({
-        capabilities = capabilities
+        capabilities = capabilities,
       })
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
@@ -40,6 +40,14 @@ return {
       vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "Go to References" })
       vim.keymap.set("n", "<leader>gR", vim.lsp.buf.rename, { desc = "Rename under cursor" })
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Command Actions" })
+    end,
+  },
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "VeryLazy",
+    opts = {},
+    config = function(_, opts)
+      require("lsp_signature").setup(opts)
     end,
   },
 }
