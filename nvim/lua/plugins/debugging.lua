@@ -28,6 +28,7 @@ return {
 			vim.keymap.set("n", "<Leader>dc", ":DapContinue<CR>")
 			vim.keymap.set("n", "<Leader>dx", ":DapTerminate<CR>")
 			vim.keymap.set("n", "<Leader>do", ":DapStepOver<CR>")
+			vim.keymap.set("n", "<Leader>du", ":lua require(\"dapui\").toggle()<CR>", { desc = "Toggle Debug UI" })
 
 			local js_based_languages = { "typescript", "javascript", "typescriptreact" }
 
