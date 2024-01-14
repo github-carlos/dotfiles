@@ -18,6 +18,8 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 require("personal")
 
-local cfg = {}  -- add your config here
+local cfg = {
+  hint_prefix = "🤔💭 "
+}  -- add your config here
 require "lsp_signature".setup(cfg)
 

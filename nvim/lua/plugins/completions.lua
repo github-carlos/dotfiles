@@ -17,11 +17,19 @@ return {
 	},
 	{
 		"hrsh7th/nvim-cmp",
+		dependencies = {
+			"windwp/nvim-autopairs",
+		},
 		config = function()
+      local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+      require("nvim-autopairs").setup();
+
 			local cmp = require("cmp")
 			require("luasnip.loaders.from_vscode").lazy_load()
 
 			local luasnip = require("luasnip")
+
+			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
 			cmp.setup({
 				snippet = {
@@ -37,8 +45,6 @@ return {
 					["<Tab>"] = cmp.mapping(function(fallback)
 						if cmp.visible() then
 							cmp.select_next_item()
-						-- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
-						-- that way you will only jump inside the snippet region
 						elseif luasnip.expand_or_jumpable() then
 							luasnip.expand_or_jump()
 						elseif has_words_before() then
