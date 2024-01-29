@@ -25,6 +25,9 @@ return {
     f = {
       name = " Lint and Formatting", -- optional group name
     },
+    x = {
+      name = " Trouble", -- optional group name
+    },
 }, { prefix = "<leader>" })
   end
 }

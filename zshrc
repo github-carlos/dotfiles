@@ -76,6 +76,19 @@ VI_MODE_SET_CURSOR=true
 
 source $ZSH/oh-my-zsh.sh
 
+
+# If command execution time above min. time, plugins will not output time.
+ZSH_COMMAND_TIME_MIN_SECONDS=3
+
+# Message to display (set to "" for disable).
+ZSH_COMMAND_TIME_MSG="Execution time: %s sec"
+
+# Message color.
+ZSH_COMMAND_TIME_COLOR="cyan"
+
+# Exclude some commands
+ZSH_COMMAND_TIME_EXCLUDE=(vim mcedit)
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -107,6 +120,8 @@ alias lza="lazydocker -f ~/Documentos/master/docker-compose.yml"
 alias tx="tmuxinator"
 alias dash="open http://localhost:4200"
 alias bot="open 'http://localhost:3000/?companyId=teste-costaoresort'"
+alias ze="zellij"
+. ~/z.sh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -114,5 +129,32 @@ export NVM_DIR="$HOME/.nvm"
 
 source $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/.oh-my-zsh/custom/plugins/command-time/command-time.plugin.zsh
 
 export PATH=$PATH:$(go env GOPATH)/bin
+
+
+chpwd() {
+  # export NODE_LTS=$(nvm list | grep -E 'stable' | tail -1 | grep -Eo '[0-9]+\.[0-9]+\.[0-9]+' | tail -1 >&1)
+  node_version=""
+
+  if ! [ -e "./package.json" ]; then
+    return 0
+  fi
+
+  if [ -e "./.nvmrc" ]; then
+    echo "Getting Node version from .nvmrc"
+    node_version=`cat .nvmrc`
+  elif [ -e "./serverless.yml" ]; then
+    echo "Getting Node version from serverless.yml"
+    node_version=`cat serverless.yml | grep -E 'nodejs[0-9]+' | grep -Eo  '[0-9]+'`
+  elif [ -e "./bitbucket-pipelines.yml" ]; then
+    echo "Getting Node version from bitbucket-pipelines.yml"
+    node_version=`cat bitbucket-pipelines.yml | grep -E "node:[0-9]+" | grep -Eo "[0-9]+(\.[0-9]+\.[0-9]+)?"`
+  fi
+
+  if [ $node_version ]; then
+    nvm install $node_version
+  fi
+}
+chpwd

@@ -8,6 +8,6 @@ return {
       "MunifTanjim/nui.nvim",
     },
     config = function()
-        vim.keymap.set('n', '<C-b>', ':Neotree toggle reveal<CR>', {})
+        vim.keymap.set('n', '<leader>p', ':Neotree toggle reveal<CR>', {})
       end
 }
