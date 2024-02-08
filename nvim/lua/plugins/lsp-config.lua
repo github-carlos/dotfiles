@@ -37,7 +37,6 @@ return {
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Go to Definition" })
-      vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "Go to References" })
       vim.keymap.set("n", "<leader>gR", vim.lsp.buf.rename, { desc = "Rename under cursor" })
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Command Actions" })
     end,

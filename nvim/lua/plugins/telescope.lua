@@ -17,9 +17,11 @@ return {
       local builtin = require("telescope.builtin")
       vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "Search Files" })
       vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "Search with Grep" })
-      vim.keymap.set("n", "<leader>sG", builtin.live_grep, { desc = "Search with Grep under cursor" })
+      vim.keymap.set("n", "<leader>sG", builtin.grep_string, { desc = "Search with Grep under cursor" })
+      vim.keymap.set("n", "<leader>sr", builtin.lsp_references, { desc = "Search References" })
       vim.keymap.set("n", "<leader>sb", builtin.buffers, { desc = "Search Opened Buffers" })
       vim.keymap.set("n", "<leader>sB", builtin.current_buffer_fuzzy_find, { desc = "Search in Buffer" })
+      vim.keymap.set("n", "<leader>sm", builtin.marks, { desc = "Search in Marks" })
 
       require("telescope").load_extension("ui-select")
     end,
