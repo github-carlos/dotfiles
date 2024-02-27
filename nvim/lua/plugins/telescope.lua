@@ -22,6 +22,7 @@ return {
       vim.keymap.set("n", "<leader>sb", builtin.buffers, { desc = "Search Opened Buffers" })
       vim.keymap.set("n", "<leader>sB", builtin.current_buffer_fuzzy_find, { desc = "Search in Buffer" })
       vim.keymap.set("n", "<leader>sm", builtin.marks, { desc = "Search in Marks" })
+      vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "Current Buffers" })
 
       require("telescope").load_extension("ui-select")
     end,
