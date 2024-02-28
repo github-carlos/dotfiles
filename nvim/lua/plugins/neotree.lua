@@ -7,6 +7,21 @@ return {
     "MunifTanjim/nui.nvim",
   },
   config = function()
-    vim.keymap.set("n", "<leader>p", ":Neotree toggle reveal float<CR>", { desc = "Neotree" })
+    require("neo-tree").setup({
+      event_handlers = {
+
+        {
+          event = "file_opened",
+          handler = function(file_path)
+            -- auto close
+            -- vimc.cmd("Neotree close")
+            -- OR
+            require("neo-tree.command").execute({ action = "close" })
+          end,
+        },
+      },
+    })
+
+    vim.keymap.set("n", "<leader>p", ":Neotree toggle reveal <CR>", { desc = "Neotree" })
   end,
 }
