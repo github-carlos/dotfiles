@@ -1,0 +1,57 @@
+{
+  "conversations": [
+    {
+      "config": {
+        "prompt": "default",
+        "context_length": 6,
+        "model": "gpt-3.5-turbo",
+        "stream": true,
+        "temperature": 1,
+        "max_tokens": 1024
+      },
+      "context": [
+        {
+          "question": "oi",
+          "answer": "Hello! How can I assist you today?"
+        },
+        {
+          "question": "make a regex that get only numbers",
+          "answer": "You can use the following regular expression to match only numbers: `\\d+`"
+        },
+        {
+          "question": "Me fale sobre paradigmas de linguagens de programacao",
+          "answer": "Existem vários paradigmas de programação, incluindo:\n\n1. **Imperativo**: Baseado em instruções que alteram o estado do programa.\n  \n2. **Orientado a Objetos**: Modela programas como objetos interagindo entre si.\n  \n3. **Funcional**: Foco em funções puras que evitam efeitos colaterais.\n  \n4. **Lógico**: Define relações entre fatos e regras.\n  \n5. **Baseado em Restrições**: Declarativo, estabelecendo relações com restrições.\n  \n6. **Programação Reativa**: Responde a eventos e propaga mudanças automaticamente.\n\nCada paradigma oferece diferentes abordagens para resolver problemas de programação."
+        },
+        {
+          "question": "como mudar o editor deafult de commits do dit",
+          "answer": "Para mudar o editor padrão de commits no Git, você pode configurar o editor preferido no terminal. Use o seguinte comando, substituindo \"editor_name\" pelo editor de sua escolha (por exemplo, \"nano\" ou \"vim\"):\n\n```\ngit config --global core.editor editor_name\n```\n\nIsso define o editor que será aberto ao escrever mensagens de commit."
+        },
+        {
+          "question": "faca um peoma pra mim",
+          "answer": "Claro, aqui vai um pequeno poema:\n\nNo teclado digitando estou,\nPalavras fluem, sem pudor.\nEm linhas de código eu crio,\nUm mundo virtual tão límpido e frio.\n\nIdeias se entrelaçam no fluxo,\nNum ritmo constante, sem escuso.\nLetras e números se unem com graça,\nNum balé digital que o tempo abraça.\n\nNa tela em branco, minha mente viaja,\nExplorando limites, sem fadiga.\nAssim é a vida em linguagem binária,\nOnde a criatividade desafina a rotina diária."
+        },
+        {
+          "question": "me deseja feliz aniversario",
+          "answer": "Feliz aniversário! Desejo que seu dia seja repleto de alegria, amor e momentos especiais. Que este novo ano de vida seja repleto de realizações e felicidade. Parabéns! 🎉🎂🎈"
+        }
+      ]
+    },
+    {
+      "config": {
+        "prompt": "default",
+        "context_length": 6,
+        "model": "gpt-3.5-turbo",
+        "stream": true,
+        "temperature": 1,
+        "max_tokens": 1024
+      },
+      "context": [
+        {
+          "question": "como buscar todas as branchs remotas com um comando git",
+          "answer": "Para ver todas as branches remotas em um repositório Git, você pode usar o comando:\n\n```\ngit branch -r\n```"
+        }
+      ]
+    }
+  ],
+  "last_idx": 1
+}
