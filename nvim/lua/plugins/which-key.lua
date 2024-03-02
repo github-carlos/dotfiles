@@ -13,8 +13,20 @@ return {
 	config = function()
 		local wk = require("which-key")
 		wk.register({
-			a = {
-				name = " Append Harpoon", -- optional group name
+      ["0"] = "which_key_ignore",
+      ["1"] = "which_key_ignore",
+      ["2"] = "which_key_ignore",
+      ["3"] = "which_key_ignore",
+      ["4"] = "which_key_ignore",
+      ["5"] = "which_key_ignore",
+      ["6"] = "which_key_ignore",
+      [","] = "which_key_ignore",
+      ["."] = "which_key_ignore",
+      ["<"] = "which_key_ignore",
+      [">"] = "which_key_ignore",
+      ["<space>"] = "which_key_ignore",
+			b = {
+				name = " Buffer Options", -- optional group name
 			},
 			c = {
 				name = " Commands", -- optional group name
@@ -26,7 +38,7 @@ return {
 				name = " Fuzzy Finder", -- optional group name
 			},
 			g = {
-				name = " LSP options", -- optional group name
+				name = " Lsp options", -- optional group name
 			},
 			f = {
 				name = " Lint and Formatting", -- optional group name

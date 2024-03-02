@@ -22,6 +22,6 @@ return {
       },
     })
 
-    vim.keymap.set("n", "<leader>p", ":Neotree toggle reveal <CR>", { desc = "Neotree" })
+    vim.keymap.set("n", "<leader>p", ":Neotree toggle reveal float <CR>", { desc = "Neotree" })
   end,
 }
