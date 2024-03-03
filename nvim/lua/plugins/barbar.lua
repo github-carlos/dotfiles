@@ -21,7 +21,7 @@ map("n", "<leader>0", "<Cmd>BufferLast<CR>", opts)
 map("n", "<leader>bP", "<Cmd>BufferPin<CR>", opts)
 
 -- Close buffer
-map("n", "<leader>bx", "<Cmd>BufferClose<CR>", opts)
+map("n", "<leader>bx", "<Cmd>BufferClose!<CR>", opts)
 map("n", "<leader>bXa", "<Cmd>BufferCloseAllButCurrent<CR>", opts)
 map("n", "<leader>bXp", "<Cmd>BufferCloseAllButPinned<CR>", opts)
 
