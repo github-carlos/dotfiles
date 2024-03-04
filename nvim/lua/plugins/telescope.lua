@@ -26,6 +26,11 @@ return {
       vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "Current Buffers" })
       vim.keymap.set("n", "<leader>sl", builtin.resume, { desc = "Search Last" })
 
+      -- Shortcut for searching your neovim configuration files
+      vim.keymap.set("n", "<leader>sn", function ()
+        builtin.find_files { cwd = vim.fn.stdpath 'config' }
+      end,{ desc = "Search Neovim Files" })
+
       require("telescope").load_extension("ui-select")
     end,
   },
