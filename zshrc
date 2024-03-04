@@ -121,6 +121,9 @@ alias tx="tmuxinator"
 alias dash="open http://localhost:4200"
 alias bot="open 'http://localhost:3000/?companyId=teste-costaoresort'"
 alias ze="zellij"
+alias fq="grep -oP \"(?<=data: ).*\" | tr -d \"'\" | jq"
+alias sd="cd ~ && cd \$(fdfind -t d -H | fzf)"
+
 . ~/z.sh
 
 export NVM_DIR="$HOME/.nvm"
