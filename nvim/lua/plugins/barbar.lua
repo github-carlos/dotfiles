@@ -24,6 +24,8 @@ map("n", "<leader>bP", "<Cmd>BufferPin<CR>", opts)
 map("n", "<leader>bx", "<Cmd>BufferClose!<CR>", opts)
 map("n", "<leader>bXa", "<Cmd>BufferCloseAllButCurrent<CR>", opts)
 map("n", "<leader>bXp", "<Cmd>BufferCloseAllButPinned<CR>", opts)
+map("n", "<leader>bX>", "<Cmd>BufferCloseBuffersRight<CR>", opts)
+map("n", "<leader>bX<", "<Cmd>BufferCloseBuffersLeft<CR>", opts)
 
 -- Magic buffer-picking mode
 map("n", "<leader>bp", "<Cmd>BufferPick<CR>", opts)
