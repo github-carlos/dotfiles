@@ -2,7 +2,6 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
-		cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
 		dependencies = {
 			{
 				"nvim-treesitter/nvim-treesitter-textobjects",
