@@ -8,3 +8,10 @@ vim.cmd("set relativenumber")
 vim.cmd("set scrolloff=8")
 vim.cmd("set cursorline")
 vim.o.clipboard = 'unnamedplus'
+
+-- disable swap files
+vim.o.swapfile = false
+
+-- Set highlight on search
+vim.o.hlsearch = true
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
