@@ -23,8 +23,11 @@ return {
       vim.keymap.set("n", "<leader>sb", builtin.buffers, { desc = "Search Opened Buffers" })
       vim.keymap.set("n", "<leader>sB", builtin.current_buffer_fuzzy_find, { desc = "Search in Buffer" })
       vim.keymap.set("n", "<leader>sm", builtin.marks, { desc = "Search in Marks" })
-      vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "Current Buffers" })
+      vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "Current Buftfers" })
       vim.keymap.set("n", "<leader>sl", builtin.resume, { desc = "Search Last" })
+      vim.keymap.set("n", "<leader>sh", function()
+        builtin.find_files {hidden = true}
+      end, { desc = "Search Hidden Files" })
 
       -- Shortcut for searching your neovim configuration files
       vim.keymap.set("n", "<leader>sn", function ()

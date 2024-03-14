@@ -11,7 +11,7 @@ return {
       },
     })
 
-    vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { desc = "LazyGit" })
+    vim.keymap.set("n", "<leader>GG", ":LazyGit<CR>", { desc = "LazyGit" })
   end,
 }
 

@@ -40,6 +40,9 @@ return {
 			g = {
 				name = " Lsp options", -- optional group name
 			},
+			G = {
+				name = " Git options", -- optional group name
+			},
 			f = {
 				name = " Lint and Formatting", -- optional group name
 			},
