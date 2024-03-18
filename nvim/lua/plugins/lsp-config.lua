@@ -88,13 +88,12 @@ return {
           vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
         end
 
-        nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+        nmap('<leader>gr', vim.lsp.buf.rename, '[R]e[n]ame')
         nmap('<leader>ca', function()
           vim.lsp.buf.code_action { context = { only = { 'quickfix', 'refactor', 'source' } } }
-        end, '[C]ode [A]ction')
+        end, 'Code Action')
 
         nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
-        nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
         nmap('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
         nmap('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
         nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
