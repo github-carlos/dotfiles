@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+# 
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -123,8 +124,10 @@ alias bot="open 'http://localhost:3000/?companyId=teste-costaoresort'"
 alias ze="zellij"
 alias fq="grep -oP \"(?<=data: ).*\" | tr -d \"'\" | jq"
 alias sd="cd ~ && cd \$(fdfind -t d -H | fzf)"
+alias t=~/todo.txt_cli/todo.sh
 
-. ~/z.sh
+# . ~/z.sh
+eval "$(zoxide init zsh)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

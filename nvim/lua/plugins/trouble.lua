@@ -10,6 +10,7 @@ end, { desc = "Document Diagnostics" })
 
 return {
 	"folke/trouble.nvim",
+	enabled = true,
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	opts = {
 		-- your configuration comes here

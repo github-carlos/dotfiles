@@ -1,5 +1,6 @@
 return {
 	"RRethy/vim-illuminate",
+	enabled = true,
 	opts = {},
 	config = function(_, opts)
 		require("illuminate").configure(opts)

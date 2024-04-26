@@ -1,6 +1,7 @@
 return {
 	{
 		"mfussenegger/nvim-dap",
+		enabled = true,
 		dependencies = {
 			"leoluz/nvim-dap-go",
 			"rcarriga/nvim-dap-ui",
@@ -63,10 +64,12 @@ return {
 	},
 	{
 		"microsoft/vscode-js-debug",
+		enabled = true,
 		run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
 	},
 	{
 		"mxsdev/nvim-dap-vscode-js",
+		enabled = true,
 		config = function()
 			require("dap-vscode-js").setup({
 				debugger_path = vim.fn.stdpath("data") .. "/lazy/vscode-js-debug",

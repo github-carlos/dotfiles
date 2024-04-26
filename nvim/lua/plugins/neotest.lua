@@ -1,5 +1,6 @@
 return {
   "nvim-neotest/neotest",
+  enabled = true,
   dependencies = {
     "haydenmeade/neotest-jest",
   },
@@ -48,7 +49,7 @@ return {
   config = function()
     require("neotest").setup({
       discovery = {
-        enabled = false,
+        enabled = true,
       },
       adapters = {
         require("neotest-jest")({

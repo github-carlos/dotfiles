@@ -1,5 +1,6 @@
 return {
   "kdheepak/lazygit.nvim",
+  enabled = true,
   config = function()
     require("lazy").setup({
       {
