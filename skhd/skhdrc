@@ -1,8 +1,8 @@
 # open terminal
-cmd - return : open -n -a "Kitty"
+alt - return : open -n -a "kitty"
 
 # open chrome 
-cmd + shift - return : open -n -a "Google Chrome" 
+alt + shift - return : open -n -a "Google Chrome" 
 
 # moves focus between windows in the current focused display
 alt - h : yabai -m window --focus west
@@ -29,7 +29,7 @@ alt - q : yabai -m space --destroy
 alt - e : yabai -m window --toggle split
 
 # close window
-alt - x : yabai -m window --close
+alt + shift - q : yabai -m window --close
 
 # minimize window
 alt - m : yabai -m window --minimize
@@ -104,6 +104,7 @@ shift + alt - 0 : yabai -m window --space 10
 
 # change layout of desktop
 ctrl + alt - a : yabai -m space --layout bsp
+ctrl + alt - s : yabai -m space --layout stack
 ctrl + alt - d : yabai -m space --layout float
 
 # increase window size
