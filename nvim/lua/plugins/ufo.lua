@@ -1,7 +1,7 @@
 return {
 	"kevinhwang91/nvim-ufo", -- Substitua com o caminho correto do plugin 'ufo', se necessário
   dependencies = "kevinhwang91/promise-async",
-	enabled = false,
+	enabled = true,
 	config = function()
 		-- Aqui dentro, você coloca as configurações do plugin 'ufo'
 

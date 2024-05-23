@@ -116,7 +116,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 bindsym Print exec "flameshot gui"
-bindsym $mod+Shift+Return exec nautilus ~
+bindsym $mod+Shift+Return exec kitty --hold -e "spf"
 
 ## Brightness
 bindsym $mod+F10 exec xrandr --output eDP-1 --brightness $(echo "$(xrandr --verbose --current | grep Brightness | awk '{print $2}') + 0.1" | bc)

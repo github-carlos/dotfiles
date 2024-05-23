@@ -10,6 +10,10 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       require("telescope").setup({
+        defaults = {
+          file_ignore_patterns = {"node_modules", ".git", ".cache"},
+          ignore_case = false
+        },
         extensions = {
           ["ui-select"] = {
             require("telescope.themes").get_dropdown({}),
