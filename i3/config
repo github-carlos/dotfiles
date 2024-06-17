@@ -153,7 +153,7 @@ set $ws10 "10"
 
 # Assign workspaces
 # assign [class="Code"] $ws2
-assign [class="google-chrome"] $ws1
+assign [class="brave-browser"] $ws1
 assign [class="Slack"] $ws3
 assign [class="youtube-music-desktop-app"] $ws5
 
@@ -225,7 +225,7 @@ bindsym $mod+r mode "resize"
 exec_always "bash ~/.config/polybar/launch.sh --forest"
 
 ## Startup
-exec --no-startup-id i3-msg 'workspace 1; exec google-chrome'
+exec --no-startup-id i3-msg 'workspace 1; exec brave-browser'
 
 
 #######################################################################

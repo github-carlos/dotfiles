@@ -125,6 +125,7 @@ alias ze="zellij"
 alias fq="grep -oP \"(?<=data: ).*\" | tr -d \"'\" | jq"
 alias sd="cd ~ && cd \$(fdfind -t d -H | fzf)"
 alias t=~/todo.txt_cli/todo.sh
+alias ls="eza --icons=always"
 
 # . ~/z.sh
 eval "$(zoxide init zsh)"
