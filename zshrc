@@ -126,6 +126,7 @@ alias fq="grep -oP \"(?<=data: ).*\" | tr -d \"'\" | jq"
 alias sd="cd ~ && cd \$(fdfind -t d -H | fzf)"
 alias t=~/todo.txt_cli/todo.sh
 alias ls="eza --icons=always"
+alias cat="batcat"
 
 # . ~/z.sh
 eval "$(zoxide init zsh)"
