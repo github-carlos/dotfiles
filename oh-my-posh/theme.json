@@ -9,7 +9,7 @@
           "foreground": "#3EC669",
           "leading_diamond": "\ue0b6",
           "properties": {
-            "style": "mixed"
+            "style": "folder"
           },
           "style": "diamond",
           "template": "\ue5ff {{ .Path }}",
