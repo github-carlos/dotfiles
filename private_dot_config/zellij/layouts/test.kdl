@@ -1,0 +1,5 @@
+layout {
+    pane // panes can be bare
+    pane command="btop" // panes can have arguments on the same line
+    pane command="cowsay Hi"
+}
