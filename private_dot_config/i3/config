@@ -124,6 +124,8 @@ bindsym $mod+F10 exec xrandr --output eDP-1 --brightness $(echo "$(xrandr --verb
 bindsym $mod+F9 exec xrandr --output eDP-1 --brightness $(echo "$(xrandr --verbose --current | grep Brightness | awk '{print $2}') - 0.1" | bc)
 
 exec_always "setxkbmap -layout us -variant intl"
+# bindsym $mod+Shift+g exec "setxkbmap -layout us"
+# bindsym $mod+Shift+b exec "setxkbmap -layout us -variant intl"
 
 # focus the parent container
 bindsym $mod+a focus parent

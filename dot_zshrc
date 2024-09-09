@@ -6,7 +6,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # Path to yazi
-export PATH=$PATH:"$HOME/"
+export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin/yazi
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -120,7 +120,7 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias idea="~/idea-IU-232.8660.185/bin/idea.sh &"
 alias tmux="tmux -f ~/.config/tmux/.tmux.conf"
-alias lza="lazydocker -f ~/Documentos/master/docker-compose.yml"
+alias lza="lazydocker -f ~/Documentos/asksuite-dev/docker-compose.yml"
 alias tx="tmuxinator"
 alias dash="open http://localhost:4200"
 alias bot="open 'http://localhost:3000/?companyId=teste-costaoresort'"
