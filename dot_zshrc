@@ -132,6 +132,7 @@ alias t=~/todo.txt_cli/todo.sh
 alias ls="eza --icons=always"
 alias cat="batcat"
 alias y=yazi
+alias c=chezmoi
 
 # . ~/z.sh
 eval "$(zoxide init zsh)"
