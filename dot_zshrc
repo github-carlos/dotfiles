@@ -1,3 +1,5 @@
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/home/cadu/.zsh/completions:"* ]]; then export FPATH="/home/cadu/.zsh/completions:$FPATH"; fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # 
@@ -111,6 +113,7 @@ fi
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+export JAVA_HOME=/home/cadu/.jdks/corretto-1.8.0_422
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -200,3 +203,4 @@ eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/theme.json)"
 # tabtab source for slss package
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [[ -f /home/cadu/Documents/asksuite-dev/asksuite-lambda-tree-manager/node_modules/tabtab/.completions/slss.zsh ]] && . /home/cadu/Documents/asksuite-dev/asksuite-lambda-tree-manager/node_modules/tabtab/.completions/slss.zsh
+. "/home/cadu/.deno/env"
