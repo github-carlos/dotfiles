@@ -203,4 +203,4 @@ eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/theme.json)"
 # tabtab source for slss package
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [[ -f /home/cadu/Documents/asksuite-dev/asksuite-lambda-tree-manager/node_modules/tabtab/.completions/slss.zsh ]] && . /home/cadu/Documents/asksuite-dev/asksuite-lambda-tree-manager/node_modules/tabtab/.completions/slss.zsh
-. "/home/cadu/.deno/env"
+export PATH=$HOME/.local/bin:$PATH
