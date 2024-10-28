@@ -1,24 +1,23 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
-  enabled = true,
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-tree/nvim-web-devicons",
-    "MunifTanjim/nui.nvim",
-  },
-  config = function()
-    require("neo-tree").setup({
-      event_handlers = {
-
-        {
-          event = "file_opened",
-          handler = function(file_path)
-            require("neo-tree.command").execute({ action = "close" })
-          end,
+  opts = {
+    window = {
+      position = "float", -- enables floating window mode
+      popup = { -- configure the floating window popup options
+        size = {
+          height = "80%", -- set the height of the floating window
+          width = "50%", -- set the width of the floating window
         },
+        border = "rounded", -- you can change to 'single', 'double', 'solid', etc.
+        winblend = 10, -- transparency level (0-100)
       },
-    })
-
-    vim.keymap.set("n", "<leader>p", ":Neotree toggle reveal float <CR>", { desc = "Neotree" })
-  end,
+    },
+    filesystem = {
+      follow_current_file = {
+        enabled = true,
+      }, -- Automatically open Neotree to the current file
+      hijack_netrw_behavior = "open_default",
+    },
+    -- other options can be customized here
+  },
 }
