@@ -4,6 +4,7 @@
 -- Unmap the existing <leader>e if needed
 vim.keymap.set("n", "<leader>e", "", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>E", "", { noremap = true, silent = true })
+vim.keymap.set("n", "S", "S", { noremap = true, silent = true })
 
 -- Map <leader>p to toggle NeoTree
 vim.keymap.set("n", "<leader>p", "<cmd>Neotree toggle<CR>", { noremap = true, silent = true, desc = "Toggle NeoTree" })

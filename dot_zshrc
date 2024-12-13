@@ -9,7 +9,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export ZSH="$HOME/.oh-my-zsh"
 
 # Path to yazi
-# export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin/yazi
+export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin/yazi
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -193,14 +193,3 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/theme.json)"
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /home/cadu/Documents/asksuite-dev/asksuite-lambda-tree-manager/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/cadu/Documents/asksuite-dev/asksuite-lambda-tree-manager/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /home/cadu/Documents/asksuite-dev/asksuite-lambda-tree-manager/node_modules/tabtab/.completions/sls.zsh ]] && . /home/cadu/Documents/asksuite-dev/asksuite-lambda-tree-manager/node_modules/tabtab/.completions/sls.zsh
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /home/cadu/Documents/asksuite-dev/asksuite-lambda-tree-manager/node_modules/tabtab/.completions/slss.zsh ]] && . /home/cadu/Documents/asksuite-dev/asksuite-lambda-tree-manager/node_modules/tabtab/.completions/slss.zsh
-export PATH=$HOME/.local/bin:$PATH
