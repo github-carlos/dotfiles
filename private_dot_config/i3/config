@@ -117,7 +117,9 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 bindsym Print exec "flameshot gui"
-bindsym $mod+Shift+Return exec kitty --hold -e "yazi"
+
+bindsym $mod+Shift+Return exec kitty --hold -e zsh -i -c "/home/linuxbrew/.linuxbrew/bin/yazi"
+bindsym $mod+Shift+a exec --no-startup-id sh -c 'dir=$(rofi -dmenu -p "Project Name:") && kitty --hold -e /home/linuxbrew/.linuxbrew/bin/zellij a "$dir"'
 
 ## Brightness
 bindsym $mod+F10 exec xrandr --output eDP-1 --brightness $(echo "$(xrandr --verbose --current | grep Brightness | awk '{print $2}') + 0.1" | bc)
