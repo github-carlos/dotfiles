@@ -119,7 +119,15 @@ bindsym $mod+space focus mode_toggle
 bindsym Print exec "flameshot gui"
 
 bindsym $mod+Shift+Return exec kitty --hold -e zsh -i -c "/home/linuxbrew/.linuxbrew/bin/yazi"
-bindsym $mod+Shift+a exec --no-startup-id sh -c 'dir=$(rofi -dmenu -p "Project Name:") && kitty --hold -e /home/linuxbrew/.linuxbrew/bin/zellij a "$dir"'
+
+
+set $projectNames "generic\nsophia\ncore\nopenaI\ncore\ncrawler\ncontrol\nprometheus-validator\n"
+bindsym $mod+Shift+a exec --no-startup-id sh -c 'dir=$( echo $projectNames | rofi -dmenu -p -l 10 ) && kitty --hold -e /home/linuxbrew/.linuxbrew/bin/zellij a "$dir"'
+
+
+## open bot on localhost
+set $companiesIds "teste-costaoresort\nteste-sophia-hard-rock-international-davie\n"
+bindsym $mod+b exec --no-startup-id brave-browser --new-tab "http://localhost:3000/?companyId=$(echo $companiesIds | rofi -dmenu  -select 1)"
 
 ## Brightness
 bindsym $mod+F10 exec xrandr --output eDP-1 --brightness $(echo "$(xrandr --verbose --current | grep Brightness | awk '{print $2}') + 0.1" | bc)
