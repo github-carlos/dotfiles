@@ -41,18 +41,16 @@ vim.api.nvim_set_keymap(
   { noremap = true, silent = true, desc = "LSP References" }
 )
 
-local telescope = require("telescope.builtin")
-
 local function list_functions()
   -- Get all symbols in the document
-  telescope.lsp_document_symbols({
+  require("telescope.builtin").lsp_document_symbols({
     initial_mode = "normal",
     attach_mappings = function(_, map)
       -- Custom function to filter out only functions
       map("i", "<CR>", function(prompt_bufnr)
-        local selection = telescope.actions.state.get_selected_entry()
+        local selection = require("telescope.builtin").actions.state.get_selected_entry()
         if selection and selection.kind == "Function" then
-          telescope.actions.close(prompt_bufnr)
+          require("telescope.builtin").actions.close(prompt_bufnr)
           -- Jump to the selected function
           vim.lsp.util.jump_to_location(selection)
         end

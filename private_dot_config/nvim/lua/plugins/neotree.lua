@@ -13,10 +13,9 @@ return {
       },
     },
     filesystem = {
-      follow_current_file = {
-        enabled = true,
-      }, -- Automatically open Neotree to the current file
-      hijack_netrw_behavior = "open_default",
+      update_focused_file = {
+        enable = true,
+      },
     },
     -- other options can be customized here
   },
