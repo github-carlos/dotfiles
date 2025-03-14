@@ -10,3 +10,5 @@ require("aerial").setup({
     vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr })
   end,
 })
+
+vim.keymap.set("n", "<leader>o", ":Neotree reveal<CR>", {})

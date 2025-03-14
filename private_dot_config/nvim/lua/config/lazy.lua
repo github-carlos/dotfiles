@@ -51,3 +51,11 @@ require("lazy").setup({
     },
   },
 })
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>p",
+  ":Neotree toggle reveal<CR>",
+  -- ":Neotree toggle reveal float<CR>",
+  { noremap = true, silent = true }
+)
