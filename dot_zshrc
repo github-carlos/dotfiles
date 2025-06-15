@@ -4,6 +4,7 @@ if [[ ":$FPATH:" != *":/home/cadu/.zsh/completions:"* ]]; then export FPATH="/ho
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(aws configure export-credentials --format env)"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
