@@ -138,7 +138,6 @@ alias y=yazi
 alias c=chezmoi
 
 # . ~/z.sh
-eval "$(zoxide init zsh)"
 # eval $(ssh-agent)
 
 export NVM_DIR="$HOME/.nvm"
@@ -149,7 +148,7 @@ source $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highli
 source $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOME/.oh-my-zsh/custom/plugins/command-time/command-time.plugin.zsh
 
-export PATH=$PATH:$(go env GOPATH)/bin
+# export PATH=$PATH:$(go env GOPATH)/bin
 
 
 chpwd() {
@@ -204,3 +203,8 @@ eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/theme.json)"
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [[ -f /home/cadu/Documents/asksuite-dev/asksuite-lambda-tree-manager/node_modules/tabtab/.completions/slss.zsh ]] && . /home/cadu/Documents/asksuite-dev/asksuite-lambda-tree-manager/node_modules/tabtab/.completions/slss.zsh
 export PATH=$HOME/.local/bin:$PATH
+eval "$(zoxide init zsh)"
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
